@@ -1,0 +1,17 @@
+<?php
+function toCamelCase($str){
+$strLength = strlen($str);
+  for($i=0; $i<$strLength; $i++) {
+    if($str[$i] == "_"||$str[$i] == "-") {
+      $str[$i] = " ";
+    }
+  }
+  if($str[0] == strtolower($str[0])) {        //Si la première lettre est minuscule.
+    $str1 = ucwords($str);                    //Convertissez d'abord chaque mot en majuscules.
+    $str2 = lcfirst($str1);                    //Convertissez ensuite les initiales en minuscules.
+    return $str2 = str_replace(' ', '', $str2); //Supprimer l'espace.
+  }else {
+    $str1 = ucwords($str);
+    return $str1 = str_replace(' ', '', $str1);
+  } 
+}
